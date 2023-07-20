@@ -4,11 +4,12 @@ const app = express();
 
 // Import the uploadImage middleware from the imageUpload.js file
 const uploadImageMiddleware = require('./middleware/imageUpload');
+const uploadImageMiddlewareV2 = require('./middleware/imageUploadV2');
 
 // ... (other middleware and routes)
 
 // Route to handle file upload and image URL with the uploadImageMiddleware
-app.post('/upload', uploadImageMiddleware, (req, res) => {
+app.post('/upload', uploadImageMiddlewareV2, (req, res) => {
     const uploadedImage = req.file;
     const { title, image_url } = req.body;
 
